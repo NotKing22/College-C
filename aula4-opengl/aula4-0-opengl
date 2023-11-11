@@ -1,0 +1,39 @@
+#include <GL/glu.h>
+
+ 
+
+void display (){
+	glClear(GL_COLOR_BUFFER_BIT);
+
+	glBegin(GL_TRIANGLES);
+	glColor3f(1.0, 0.0, 0.0); //cor vermelha
+	glVertex2f(0.0, 1.0);
+	glColor3f(0.0, 1.0, 0.0); // cor verde
+	glVertex2f(-1.0, -1.0);
+	glColor3f(0.0, 0.0, 1.0); // cor blue
+	glVertex2f(1.0, -1.0);
+
+	glEnd();
+
+//	glFlush();
+
+ 
+
+    glutSwapBuffers();
+}
+
+ 
+
+int main (int argc, char** argv){
+	glutInit(&argc, argv);
+	glutInitDisplayMode(GLUT_DOUBLE | GLUT_RGB);
+	glutInitWindowSize(500,500);
+	glutCreateWindow("Desenho Quadrado!!!");
+
+	glutDisplayFunc(display);
+
+	glClearColor(1.0, 1.0, 1.0, 1.0); //cor branca
+
+	glutMainLoop();
+
+}
